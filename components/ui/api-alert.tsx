@@ -24,9 +24,9 @@ const variantMap: Record<Props["variant"], BadgeProps["variant"]> = {
 };
 
 const ApiAlert = ({ title, description, variant = "public" }: Props) => {
-  const onCopy = () => {
+  const onCopy = (description: string) => {
     navigator.clipboard.writeText(description);
-    toast.success("Copied to clipboard");
+    toast.success("API Route copied to clipboard.");
   };
   return (
     <Alert>
@@ -36,11 +36,10 @@ const ApiAlert = ({ title, description, variant = "public" }: Props) => {
         <Badge variant={variantMap[variant]}>{textMap[variant]}</Badge>
       </AlertTitle>
       <AlertDescription className="mt-4 flex items-center justify-between">
-        <code className="relative rounded bg-muted px-[.3rem] py-[.2rem] font-mono text-sm font-semibold">
+        <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold">
           {description}
         </code>
-
-        <Button variant="outline" size="icon" onClick={onCopy}>
+        <Button variant="outline" size="sm" onClick={() => onCopy(description)}>
           <Copy className="h-4 w-4" />
         </Button>
       </AlertDescription>

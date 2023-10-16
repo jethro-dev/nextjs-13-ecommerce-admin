@@ -26,7 +26,7 @@ import { Separator } from "@/components/ui/separator";
 // import { AlertModal } from "@/components/modals/alert-modal";
 // import { ApiAlert } from "@/components/ui/api-alert";
 import { useOrigin } from "@/hooks/use-origin";
-import AlertModal from "@/components/modals/alert-modal";
+import { AlertModal } from "@/components/modals/alert-modal";
 import Heading from "@/components/ui/heading";
 import ApiAlert from "@/components/ui/api-alert";
 
